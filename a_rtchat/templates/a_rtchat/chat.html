@@ -19,7 +19,8 @@
                 <form id="chat_message_form" class="w-full"
                     hx-post="{% url 'home' %}"
                     hx-target="#chat_messages"
-                    hx-swap="beforeend">
+                    hx-swap="beforeend"
+                    _="on htmx:afterRequest reset() me">
                     {% csrf_token %}
                     {{ form }}
                 </form>
